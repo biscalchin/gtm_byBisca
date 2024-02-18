@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 import codecs
 import os
 
-VERSION = '1.0.1'
+VERSION = '1.0.2'
 DESCRIPTION = 'Generative Topographic Mapping and Analysis Toolkit'
 
 # Read the contents of your README file

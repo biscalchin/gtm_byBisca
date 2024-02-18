@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: GTMAnalysisToolkit
-Version: 1.0.1
+Version: 1.0.2
 Summary: Generative Topographic Mapping and Analysis Toolkit
 Author: Eng. Alberto Biscalchin
 Author-email: <biscalchin.mau.se@gmail.com>
@@ -95,10 +95,6 @@ if model.success_flag:
     plt.show()
 
 ```
-
-## Documentation
-
-WORK IN PROGRESS
 
 ## License
 
