@@ -11,7 +11,8 @@ The Generative Topographic Mapping and Analysis Toolkit is a Python package desi
 - Support for both forward analysis (regression) and inverse analysis.
 - Visualization tools for low-dimensional embeddings of high-dimensional data.
 
-## Installation
+## Installation 
+### Not available yet on pipy, follows for more info in the future
 To install the GTMAnalysisToolkit, run the following command in your terminal:
 ```bash
 pip install GTMAnalysisToolkit
