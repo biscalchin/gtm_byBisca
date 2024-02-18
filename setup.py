@@ -15,7 +15,7 @@ LONG_DESCRIPTION = (
 
 # Setting up
 setup(
-    name="GTMAnalysisToolkit",  # A name that reflects the package's purpose
+    name="GTMAnalysisToolkit-byBisca",  # A name that reflects the package's purpose
     version=VERSION,
     author="Eng. Alberto Biscalchin",  # Replace with your name
     author_email="<biscalchin.mau.se@gmail.com>",
