@@ -14,7 +14,7 @@ The Generative Topographic Mapping and Analysis Toolkit is a Python package desi
 ## Installation
 To install the GTMAnalysisToolkit, run the following command in your terminal:
 ```bash
-pip install GTMAnalysisToolkit-byBisca
+pip install GTMAnalysisToolkit
 ```
 Ensure you have Python 3.x installed on your system. This package depends on numpy, scipy, matplotlib, and sklearn, which will be automatically installed during the GTMAnalysisToolkit installation.
 
