@@ -1,3 +1,22 @@
+Metadata-Version: 2.1
+Name: GTMAnalysisToolkit
+Version: 1.0.0
+Summary: Generative Topographic Mapping and Analysis Toolkit
+Author: Eng. Alberto Biscalchin
+Author-email: <biscalchin.mau.se@gmail.com>
+Keywords: generative topographic mapping,dimensionality reduction,data visualization,machine learning,high-dimensional data analysis
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: matplotlib
+Requires-Dist: scikit-learn
+
 # Generative Topographic Mapping and Analysis Toolkit
 ## Introduction
 
@@ -12,13 +31,14 @@ The Generative Topographic Mapping and Analysis Toolkit is a Python package desi
 - Visualization tools for low-dimensional embeddings of high-dimensional data.
 
 ## Installation 
+<h3 style="color:red;">Not available yet on pipy, follows for more info in the future</h3>
 
-To install the GTMAnalysisToolkit, run the following command in your terminal:
+<!-- To install the GTMAnalysisToolkit, run the following command in your terminal:
 ```bash
 pip install GTMAnalysisToolkit
 ```
 Ensure you have Python 3.x installed on your system. This package depends on numpy, scipy, matplotlib, and sklearn, which will be automatically installed during the GTMAnalysisToolkit installation.
-
+-->
 ## Quick Start
 
 Here's a quick example to get you started with using the GTMAnalysisToolkit:
