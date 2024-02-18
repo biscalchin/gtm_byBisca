@@ -77,10 +77,6 @@ if model.success_flag:
 
 ```
 
-## Documentation
-
-WORK IN PROGRESS
-
 ## License
 
 This project is licensed under the GNU General Public License version 3 (GPL-3.0) - see the LICENSE file for details.
