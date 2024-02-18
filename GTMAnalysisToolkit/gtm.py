@@ -151,8 +151,9 @@ class GTM:
 
             # Optionally display the likelihood (or other metric) to monitor convergence
             if self.display_flag:
-                print("{0}/{1} ... likelihood: {2}".format(iteration + 1, self.number_of_iterations,
-                                                           self.likelihood_value(input_dataset)))
+                print("{0}/{1} ... likelihood: {2}".format(iteration + 1,
+                                                           self.number_of_iterations,
+                                                           self.likelihood_value))
 
     def calculate_distance_between_phi_w_and_input_distances(self, input_dataset):
         """
@@ -232,7 +233,8 @@ class GTM:
                                                                (rbf_for_responsibility.shape[0], 1))
         # Compute the likelihood of the input dataset
         self.likelihood_value = (np.log((self.beta / 2.0 / np.pi) ** (input_dataset.shape[1] / 2.0) /
-                                        np.prod(self.shape_of_map) * rbf_for_responsibility.sum(axis=1))).sum()
+                                        (np.exp(-self.beta / 2.0 * distance) * self.mixing_coefficients).sum(
+                                            axis=1))).sum()
 
         return responsibilities
 
