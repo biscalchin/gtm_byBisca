@@ -23,23 +23,57 @@ Ensure you have Python 3.x installed on your system. This package depends on num
 Here's a quick example to get you started with using the GTMAnalysisToolkit:
 
 ```Python
+import matplotlib.figure as figure
+import matplotlib.pyplot as plt
 from GTMAnalysisToolkit import GTM
-import numpy as np
+from sklearn.datasets import load_iris
 
-# Example dataset
-X = np.random.rand(100, 5)  # 100 samples, 5-dimensional
+# settings
+shape_of_map = [10, 10]
+shape_of_rbf_centers = [5, 5]
+variance_of_rbfs = 4
+lambda_in_em_algorithm = 0.001
+number_of_iterations = 300
+display_flag = 1
 
-# Initialize GTM model
-gtm_model = GTM()
+# load an iris dataset
+iris = load_iris()
+# input_dataset = pd.DataFrame(iris.data, columns=iris.feature_names)
+input_dataset = iris.data
+color = iris.target
 
-# Fit model
-gtm_model.fit(X)
+# autoscaling
+input_dataset = (input_dataset - input_dataset.mean(axis=0)) / input_dataset.std(axis=0, ddof=1)
 
-# Transform data to lower-dimensional space
-X_transformed = gtm_model.transform(X)
+# construct GTM model
+model = GTM(shape_of_map, shape_of_rbf_centers, variance_of_rbfs, lambda_in_em_algorithm, number_of_iterations,
+            display_flag)
+model.fit(input_dataset)
 
-# Visualize the result
-gtm_model.visualize(X_transformed)
+if model.success_flag:
+    # calculate of responsibilities
+    responsibilities = model.responsibility(input_dataset)
+
+    # plot the mean of responsibilities
+    means = responsibilities.dot(model.map_grids)
+    plt.figure(figsize=figure.figaspect(1))
+    plt.scatter(means[:, 0], means[:, 1], c=color)
+    plt.ylim(-1.1, 1.1)
+    plt.xlim(-1.1, 1.1)
+    plt.xlabel("z1 (mean)")
+    plt.ylabel("z2 (mean)")
+    plt.show()
+
+    # plot the mode of responsibilities
+    modes = model.map_grids[responsibilities.argmax(axis=1), :]
+    plt.figure(figsize=figure.figaspect(1))
+    plt.scatter(modes[:, 0], modes[:, 1], c=color)
+    plt.ylim(-1.1, 1.1)
+    plt.xlim(-1.1, 1.1)
+    plt.xlabel("z1 (mode)")
+    plt.ylabel("z2 (mode)")
+    plt.show()
+
 ```
 
 ## Documentation
